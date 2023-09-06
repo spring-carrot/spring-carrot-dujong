@@ -23,6 +23,10 @@ public class Member extends BaseTimeEntity {
     private String name;
     private String email;
     private String phone;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+//    private String authorities;
 
     //== Member 정보 업데이트 ==//
     public void updateName(String name) {
@@ -41,5 +45,10 @@ public class Member extends BaseTimeEntity {
     //== 비밀번호 암호화 ==//
     public void encodePassword(PasswordEncoder passwordEncoder) {
         this.password = passwordEncoder.encode(password);
+    }
+
+    //회원가입시, USER의 권한을 부여하는 METHOD
+    public void addUserAuthority() {
+        this.role = Role.USER;
     }
 }

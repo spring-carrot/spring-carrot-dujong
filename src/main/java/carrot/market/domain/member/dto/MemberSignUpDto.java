@@ -15,12 +15,12 @@ public record MemberSignUpDto(
         String password,
 
         @NotBlank(message = "이메일을 입력해주세요")
-        @Pattern(regexp = "^?=.*[@$!%*#?&]",
-        message = "@를 포함해야합니다.")
+//        @Pattern(regexp = "^?=.*[@$!%*#?&]",
+//        message = "@를 포함해야합니다.")
         String email,
         @NotBlank
-        @Pattern(regexp = "^?=.*[@$!%*#?&]",
-                message = "-를 포함하지 말아주세요.")
+//        @Pattern(regexp = "^?=.*[@$!%*#?&]",
+//                message = "-를 포함하지 말아주세요.")
         String phone) {
         public Member toEntity() {
                 return Member.builder().name(name).password(password).email(email).phone(phone).build();
