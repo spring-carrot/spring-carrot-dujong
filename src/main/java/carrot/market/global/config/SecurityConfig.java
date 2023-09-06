@@ -3,6 +3,7 @@ package carrot.market.global.config;
 import carrot.market.global.jwt.JwtAccessDeniedHandler;
 import carrot.market.global.jwt.JwtAuthenticationEntryPoint;
 import carrot.market.global.jwt.TokenProvider;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -38,7 +39,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(authorize -> // HttpServletRequest를 사용하는 요청들에 대한 접근제한을 설정
                         authorize.requestMatchers("/api/authenticate").permitAll() //로그인 api
-                                .requestMatchers("/api/signUp").permitAll() //회원가입 api
+                                .requestMatchers("/signUp").permitAll() //회원가입 api
                                 .anyRequest().authenticated())
                 .apply(new JwtSecurityConfig(tokenProvider));
 

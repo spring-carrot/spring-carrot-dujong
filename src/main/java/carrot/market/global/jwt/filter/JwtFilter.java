@@ -1,5 +1,6 @@
-package carrot.market.global.jwt;
+package carrot.market.global.jwt.filter;
 
+import carrot.market.global.jwt.TokenProvider;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
@@ -25,7 +26,7 @@ public class JwtFilter extends GenericFilterBean {
     // 토큰의 인증정보를 SecurityContext에 저장하는 역할 수행
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest = (HttpServletRequest) response;
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String jwt = resolveToken(httpServletRequest);
         String requestURI = httpServletRequest.getRequestURI();
 

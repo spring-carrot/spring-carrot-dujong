@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest
-@Transactional
+//@Transactional
 class MemberRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
@@ -41,7 +41,8 @@ class MemberRepositoryTest {
         Member member = Member.builder().name("JD").password("1234").email("parksn5029").phone("01062058826").build();
         //when
         memberRepository.save(member);
-//        clear();
+//        em.flush();
+
         //then
         List<Member> memberList = memberRepository.findAll();
         log.info("memberList={}", memberList);

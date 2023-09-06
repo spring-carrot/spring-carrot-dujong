@@ -1,6 +1,6 @@
 package carrot.market.global.config;
 
-import carrot.market.global.jwt.JwtFilter;
+import carrot.market.global.jwt.filter.JwtFilter;
 import carrot.market.global.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

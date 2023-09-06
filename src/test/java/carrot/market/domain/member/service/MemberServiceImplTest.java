@@ -39,7 +39,7 @@ class MemberServiceImplTest {
     }
 
     @Test
-    public void signUp() {
+    public void signUp() throws Exception {
         //given
         MemberSignUpDto memberSignUpDto = new MemberSignUpDto("ParkJongDu", "qwer1234!", "parksn5029@naver.com", "010-6205-8826");
 
